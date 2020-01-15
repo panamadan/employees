@@ -1,5 +1,5 @@
-const inquriere
-cionst connneciton
+const inquirer = require("inquirer")
+const connnection = require("connection")
 
 // connection.connect(function (err) {
 //     if (err) throw (err)
@@ -49,7 +49,13 @@ function mainApp() {
 
         })
     function viewAllEmployess() {
-
+connection.query(query, function(err, res){
+    if (err) throw err
+    for (i=0; i<res.length; i++){
+        console.table(res[i])
+    }
+    mainApp();
+})
     };
     function viewEmployeesDept() {
 
